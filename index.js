@@ -336,7 +336,7 @@ async function run() {
   let { sha } = context;
   await setEnv();
 
-  let commit = execSync('git log -1 --pretty=format:%B')
+  let commit = execSync('git log -1 --pretty=format:%s')
     .toString()
     .trim();
   if (github.context.eventName === 'push') {
